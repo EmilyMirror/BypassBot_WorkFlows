@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
 
-      - uses: styfle/cancel-workflow-action@0.9.0
+      - uses: styfle/cancel-workflow-action@0.10.0
         name: "Cancel duplicate workflow runs"
         with:
             all_but_latest: true
@@ -44,7 +44,7 @@ jobs:
           docker image ls
 
       - name: Running Ultimate Bypass
-        timeout-minutes: 180
+        timeout-minutes: 150
         continue-on-error: true
         run: |
           docker run --privileged --rm -i bypass-bot
